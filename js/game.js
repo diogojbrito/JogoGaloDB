@@ -1,5 +1,5 @@
 // JavaScript for game logic
-
+let firstPlayer = 'X'; // Quem começa cada jogo
 let currentPlayer = 'X'; // Jogador atual ('X' or 'O')
 let gameActive = true; // Indica se o jogo está ativo
 const cells = document.querySelectorAll('.cell'); // Seleciona todas as células do tabuleiro
@@ -78,8 +78,16 @@ function closeModal() {
 // Reseta o jogador atual, ativa o jogo e limpa todas as células do tabuleiro.
 // Atualiza o indicador do jogador atual na página.
 function resetGame() {
-    currentPlayer = 'X'; // Define o jogador atual como 'X' no início do jogo
+    currentPlayer = firstPlayer;
     gameActive = true; // Ativa o jogo
     cells.forEach(cell => cell.textContent = ''); // Limpa todas as células do tabuleiro
     document.getElementById('currentPlayer').textContent = currentPlayer; // Atualiza o indicador do jogador atual na página
+}
+
+
+// Função para mudar quem joga primeiro
+function changeFirstPlayer() {
+    firstPlayer = firstPlayer === 'X' ? 'O' : 'X'; // Troca entre X e O
+    document.getElementById('firstPlayerBtn').textContent = 'Começa: ' + firstPlayer; // Atualiza o texto do botão
+    resetGame(); // Recomeça o jogo com o novo jogador
 }
