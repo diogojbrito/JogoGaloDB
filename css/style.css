@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;          
+    background-color: #eef2f7;
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;                    
+    justify-content: center;     
+    margin: 20px 0;
+}
+
+/* Cada célula é um quadrado de 100px */
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid #333;
+    font-size: 60px;
+    line-height: 100px;          
+    cursor: pointer;            
+}
+
+/* Quando o rato passa por cima de uma célula */
+.cell:hover {
+    background-color: #dde6f5;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;             
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);  
+}
+
+
+.modal.show {
+    display: block;
+}
+
+
+.modal-box {
+    background-color: white;
+    width: 280px;
+    margin: 150px auto;         
+    padding: 30px;
+    border-radius: 10px;
+}

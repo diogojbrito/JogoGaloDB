@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo do Galo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Jogo do Galo</h1>
+
+   
+    <p>Vez do jogador: <span id="currentPlayer">X</span></p>
+
+  
+    <div class="board">
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+        <div class="cell" onclick="makeMove(this)"></div>
+    </div>
+
+
+    <button onclick="resetGame()">Novo Jogo</button>
+
+    
+    <div id="winModal" class="modal">
+        <div class="modal-box">
+            <p id="winMessage"></p>
+            <button onclick="closeModal()">Jogar outra vez</button>
+        </div>
+    </div>
+
+    
+    <script src="js/game.js"></script>
+
+</body>
+</html>
