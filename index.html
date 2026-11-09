@@ -2,7 +2,17 @@
 <html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
+    <!-- Faz o site ajustar-se ao ecrã do telemóvel -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo do Galo</title>
+
+    <!-- PWA: ficheiro com a informação da app -->
+    <link rel="manifest" href="manifest.json">
+    <!-- PWA: cor da barra do browser -->
+    <meta name="theme-color" content="#333333">
+    <!-- PWA: ícone para iPhone/iPad -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -39,6 +49,13 @@
 
     
     <script src="js/game.js"></script>
+
+    <!-- PWA: regista o service worker (faz o jogo funcionar offline) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
 
 </body>
 </html>
